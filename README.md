@@ -28,4 +28,4 @@ Drop this in a module for a process you wish to test (such as a [Phoenix channel
 
 Make sure to replace `CALLBACK` with an atom of your callback function name, and `[ARGS]` with a list of arguments to pass to that callback.
 
-The [test](test/channel_watcher_test.exs) also shows an example of usage.
+The [test](https://gitlab.com/cap-public/packages/channel-watcher/-/blob/master/test/channel_watcher_test.exs) also shows an example of usage.
