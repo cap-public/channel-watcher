@@ -23,11 +23,12 @@ defmodule ChannelWatcher do
   end
 
   def handle_call({:monitor, pid, callback}, _from, state) do
-    {reply, state} = if check_and_link_pid(pid) do
-      {:ok, put_channel(state, pid, callback)}
-    else
-      {:error, state}
-    end
+    {reply, state} =
+      if check_and_link_pid(pid) do
+        {:ok, put_channel(state, pid, callback)}
+      else
+        {:error, state}
+      end
 
     {:reply, reply, state}
   end

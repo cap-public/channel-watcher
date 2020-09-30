@@ -3,13 +3,13 @@ defmodule ChannelWatcherTest do
   doctest ChannelWatcher
 
   test "callback on text" do
-    pid = spawn fn -> Process.sleep(30) end
+    pid = spawn(fn -> Process.sleep(30) end)
     :ok = ChannelWatcher.monitor(pid, {__MODULE__, :confirm, [self(), "confirmed"]})
     assert_receive {:ok, "confirmed"}
   end
 
   test "demonitoring prevents callback" do
-    pid = spawn fn -> Process.sleep(30) end
+    pid = spawn(fn -> Process.sleep(30) end)
     :ok = ChannelWatcher.monitor(pid, {__MODULE__, :confirm, [self(), "confirmed"]})
     :ok = ChannelWatcher.demonitor(pid)
     refute_receive {:ok, "confirmed"}
@@ -20,7 +20,7 @@ defmodule ChannelWatcherTest do
   end
 
   test "trying to monitor something that isn't a PID errors" do
-    invalid_pid = spawn fn -> :ok end
+    invalid_pid = spawn(fn -> :ok end)
 
     :error = ChannelWatcher.monitor(invalid_pid, {__MODULE__, :confirm, [self(), "confirmed"]})
     :error = ChannelWatcher.monitor(false, {__MODULE__, :confirm, [self(), "confirmed"]})
