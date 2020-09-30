@@ -38,7 +38,7 @@ defmodule ChannelWatcher.MixProject do
   end
 
   defp description do
-    "A GenServer to monitor PIDs and run callbacks they go down."
+    "A GenServer to monitor PIDs and run callbacks they go down - originally designed to be a watcher for Phoenix channels."
   end
 
   defp package do
