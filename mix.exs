@@ -32,7 +32,8 @@ defmodule ChannelWatcher.MixProject do
   defp deps do
     [
       {:excoveralls, "~> 0.13.2", only: :test},
-      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+      {:ex_doc, ">= 0.0.0", only: [:dev, :test], runtime: false},
+      {:inch_ex, github: "rrrene/inch_ex", only: [:dev, :test]}
     ]
   end
 
