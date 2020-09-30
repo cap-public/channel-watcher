@@ -4,7 +4,7 @@
 
 A [GenServer](https://hexdocs.pm/elixir/GenServer.html) to monitor PIDs and run callbacks when they go down.
 
-This is basically _slightly_ improved version of Chris McCord's answer to a [StackOverflow question](https://stackoverflow.com/a/33941469).
+This is essentially a _slightly_ improved version of Chris McCord's answer to a [StackOverflow question](https://stackoverflow.com/a/33941469).
 
 ## Installation
 
