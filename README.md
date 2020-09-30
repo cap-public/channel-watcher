@@ -14,7 +14,7 @@ The package can be installed by adding `channel_watcher` to your list of depende
 ```elixir
 def deps do
   [
-    {:channel_watcher, git: "https://gitlab.com/cap-public/packages/channel-watcher", tag: "0.1"}
+    {:channel_watcher, "~> 0.1.0"}
   ]
 end
 ```
