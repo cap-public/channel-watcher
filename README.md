@@ -1,6 +1,7 @@
 # ChannelWatcher
 
-[![build status](https://gitlab.com/cap-public/packages/channel-watcher/badges/master/pipeline.svg)](https://gitlab.com/cap-public/packages/channel-watcher/-/commits/master) [![coverage report](https://gitlab.com/cap-public/packages/channel-watcher/badges/master/coverage.svg)](https://cap-public.gitlab.io/packages/channel-watcher/coverage/excoveralls.html)
+[![build status](https://gitlab.com/cap-public/packages/channel-watcher/badges/master/pipeline.svg)](https://gitlab.com/cap-public/packages/channel-watcher/-/commits/master)
+[![coverage report](https://gitlab.com/cap-public/packages/channel-watcher/badges/master/coverage.svg)](https://cap-public.gitlab.io/packages/channel-watcher/coverage/excoveralls.html)
 
 A [GenServer](https://hexdocs.pm/elixir/GenServer.html) to monitor PIDs and run callbacks when they go down.
 
