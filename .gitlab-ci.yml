@@ -1,0 +1,44 @@
+variables:
+  MIX_ENV: "test"
+
+stages:
+  - test
+  - package
+
+mix:
+  image: elixir:slim
+  interruptible: true
+  stage: test
+  cache:
+    key: gitlab_auth_mix
+    paths:
+      - deps/
+      - _build/
+  artifacts:
+    paths:
+      - cover/
+    expire_in: 1 day
+  before_script:
+    - mix local.hex --force
+    - mix local.rebar --force
+    - mix deps.get --only test
+  script:
+    - mix coveralls.html
+
+pages:
+  image: ruby:alpine
+  interruptible: true
+  stage: package
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+  cache: {}
+  dependencies:
+    - mix
+  only:
+    - master
+  script:
+    - mkdir -p cover
+    - mkdir -p public
+    - mv cover/ public/coverage/
