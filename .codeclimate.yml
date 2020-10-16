@@ -1,0 +1,7 @@
+engines:
+  credo:
+    enabled: true
+    strict: true
+    all: true
+    only: "warning"
+    ignore: "readability"
