@@ -2,10 +2,8 @@ variables:
   MIX_ENV: "test"
 
 include:
-  - project: 'cap-public/ci/gitlab-ci-templates'
-    file: '/elixir/mix_no_db.yml'
-  - project: 'cap-public/ci/gitlab-ci-templates'
-    file: '/elixir/pages.yml'
+  - remote: 'https://raw.githubusercontent.com/cap-public/gitlab-ci-templates/master/elixir/mix_no_db.yml'
+  - remote: 'https://raw.githubusercontent.com/cap-public/gitlab-ci-templates/master/elixir/pages.yml'
 
 stages:
   - test
