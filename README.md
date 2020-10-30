@@ -16,7 +16,7 @@ The package can be installed by adding `channel_watcher` to your list of depende
 ```elixir
 def deps do
   [
-    {:channel_watcher, "~> 0.1.0"}
+    {:channel_watcher, "~> 0.2.0"}
   ]
 end
 ```
@@ -30,5 +30,10 @@ Drop this in a module for a process you wish to test (such as a [Phoenix channel
 ```
 
 Make sure to replace `CALLBACK` with an atom of your callback function name, and `[ARGS]` with a list of arguments to pass to that callback.
+
+You also need to set the process name in `config/config.exs`:
+```elixir
+config :channel_watcher, process_name: ChannelWatcher
+```
 
 The [test](https://gitlab.com/cap-public/packages/channel-watcher/-/blob/master/test/channel_watcher_test.exs) also shows an example of usage.
